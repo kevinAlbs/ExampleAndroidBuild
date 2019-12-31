@@ -1,0 +1,7 @@
+cmake_minimum_required (VERSION 3.0)
+project (app C)
+find_package (libbson-static-1.0 1.0 REQUIRED)
+add_executable (app app.c)
+target_include_directories (app PRIVATE "${BSON_STATIC_INCLUDE_DIRS}")
+target_link_libraries (app PRIVATE "${BSON_STATIC_LIBRARIES}")
+target_compile_definitions (app PRIVATE "${BSON_STATIC_DEFINITIONS}")
